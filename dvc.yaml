@@ -15,3 +15,11 @@ stages:
     - data/features/X.npy
     - data/features/power_transform.joblib
     - data/features/y.npy
+  train:
+    cmd: python train.py
+    deps:
+    - data/features/X.npy
+    - data/features/y.npy
+    - train.py
+    outs:
+    - models/model.pkl
