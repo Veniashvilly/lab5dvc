@@ -40,3 +40,51 @@ stages:
       hash: md5
       md5: 8f8ef771a20928122772af141f56f3c9
       size: 1344
+  train:
+    cmd: python train.py
+    deps:
+    - path: data/features/X.npy
+      hash: md5
+      md5: 35592348494e683da26217ce0a2b44d6
+      size: 9856
+    - path: data/features/y.npy
+      hash: md5
+      md5: 8f8ef771a20928122772af141f56f3c9
+      size: 1344
+    - path: train.py
+      hash: md5
+      md5: 698989463e1169d65d48f1600885ad30
+      size: 629
+    outs:
+    - path: models/model.pkl
+      hash: md5
+      md5: 11f8ffccdaa6b26cfe4471f087364a5f
+      size: 876
+  evaluate:
+    cmd: python evaluate.py
+    deps:
+    - path: data/features/X.npy
+      hash: md5
+      md5: 35592348494e683da26217ce0a2b44d6
+      size: 9856
+    - path: data/features/power_transform.joblib
+      hash: md5
+      md5: 766966150f9eff7a592f4d7991e28fe7
+      size: 837
+    - path: data/features/y.npy
+      hash: md5
+      md5: 8f8ef771a20928122772af141f56f3c9
+      size: 1344
+    - path: evaluate.py
+      hash: md5
+      md5: 7aada0e50d7892c6ccabeb86039dbbe5
+      size: 665
+    - path: models/model.pkl
+      hash: md5
+      md5: 11f8ffccdaa6b26cfe4471f087364a5f
+      size: 876
+    outs:
+    - path: metrics.json
+      hash: md5
+      md5: e9eea77beeea1cc52f455a10ab9f3ac3
+      size: 90
