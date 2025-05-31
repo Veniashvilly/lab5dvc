@@ -6,3 +6,12 @@ stages:
     - prepare.py
     outs:
     - data/clean.csv
+  featurize:
+    cmd: python features.py
+    deps:
+    - data/clean.csv
+    - features.py
+    outs:
+    - data/features/X.npy
+    - data/features/power_transform.joblib
+    - data/features/y.npy
