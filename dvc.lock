@@ -16,3 +16,27 @@ stages:
       hash: md5
       md5: b9d46b48e733548007342187f91596c8
       size: 7383
+  featurize:
+    cmd: python features.py
+    deps:
+    - path: data/clean.csv
+      hash: md5
+      md5: b9d46b48e733548007342187f91596c8
+      size: 7383
+    - path: features.py
+      hash: md5
+      md5: 4dfdfad72d70306da1a1ac7f597dc77e
+      size: 743
+    outs:
+    - path: data/features/X.npy
+      hash: md5
+      md5: 35592348494e683da26217ce0a2b44d6
+      size: 9856
+    - path: data/features/power_transform.joblib
+      hash: md5
+      md5: 766966150f9eff7a592f4d7991e28fe7
+      size: 837
+    - path: data/features/y.npy
+      hash: md5
+      md5: 8f8ef771a20928122772af141f56f3c9
+      size: 1344
